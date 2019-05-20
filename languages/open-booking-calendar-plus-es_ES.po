@@ -1,0 +1,246 @@
+# Blank WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Booking Calendar Plus v1.0.0\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2019-05-18 10:31-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Web Services Rank <support@webservicesrank.com>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 2.2.2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:47
+msgid "Contact details"
+msgstr "Detalles del contacto"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:54
+msgid "Queries details"
+msgstr "Detalles de las consultas"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:80
+#: admin/meta-boxes/class-contact-log-cmb.php:83
+#: admin/meta-boxes/class-contact-log-cmb.php:338
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:88
+#: admin/meta-boxes/class-contact-log-cmb.php:339
+msgid "Last query date"
+msgstr "Fecha de la última consulta"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:96
+msgid "Number of queries"
+msgstr "Número de consultas"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:119
+msgid "Booking preview"
+msgstr "Vista previa de una reserva"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:120
+msgid "Accommodation search"
+msgstr "Buscar alojamiento"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:134
+msgid "Type"
+msgstr "Tipo"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:171
+#: admin/meta-boxes/class-contact-log-cmb.php:250
+msgid "Query date"
+msgstr "Fecha de la consulta"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:184
+#: admin/meta-boxes/class-promotion-cmb.php:72
+#: admin/meta-boxes/class-promotion-cmb.php:157
+#: includes/shortcodes/class-promotions-csc.php:143
+msgid "Accommodation"
+msgstr "Alojamiento"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:194
+#: admin/meta-boxes/class-contact-log-cmb.php:262
+msgid "Selected date"
+msgstr "Fecha seleccionada"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:204
+#: admin/meta-boxes/class-contact-log-cmb.php:272
+msgid "Number of adults"
+msgstr "Número de adultos"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:214
+#: admin/meta-boxes/class-contact-log-cmb.php:282
+msgid "Number of children"
+msgstr "Número de niños"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:224
+#: admin/meta-boxes/class-contact-log-cmb.php:292
+msgid "Name"
+msgstr "Nombre"
+
+#: admin/meta-boxes/class-contact-log-cmb.php:340
+msgid "Queries"
+msgstr "Consultas"
+
+#: admin/meta-boxes/class-promotion-cmb.php:47
+msgid "Promotion details"
+msgstr "Detalles de la promoción"
+
+#: admin/meta-boxes/class-promotion-cmb.php:90
+#: admin/meta-boxes/class-promotion-cmb.php:158
+msgid "Season"
+msgstr "Temporada"
+
+#: admin/meta-boxes/class-promotion-cmb.php:108
+#: includes/shortcodes/class-promotions-csc.php:144
+msgid "Number of nights"
+msgstr "Número de noches"
+
+#: admin/meta-boxes/class-promotion-cmb.php:116
+msgid "Promotion price"
+msgstr "Precio de la promoción"
+
+#: admin/meta-boxes/class-promotion-cmb.php:159
+msgid "Num. of nights"
+msgstr "Num. de noches"
+
+#: admin/meta-boxes/class-promotion-cmb.php:160
+#: includes/shortcodes/class-promotions-csc.php:145
+msgid "Price"
+msgstr "Precio"
+
+#: includes/post-types/class-contact-log-cpt.php:47
+#: includes/post-types/class-contact-log-cpt.php:48
+#: includes/post-types/class-contact-log-cpt.php:57
+msgid "Contact Log"
+msgstr "Registro de contactos"
+
+#: includes/post-types/class-contact-log-cpt.php:49
+msgctxt "Add New Contact Log"
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: includes/post-types/class-contact-log-cpt.php:50
+msgid "Add New Contact"
+msgstr "Añadir nuevo contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:51
+msgid "Edit Contact"
+msgstr "Editar contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:52
+msgid "New Contact"
+msgstr "Nuevo contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:53
+msgid "View Contact"
+msgstr "Ver contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:54
+msgid "Search Contact"
+msgstr "Buscar contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:55
+msgid "No contacts found"
+msgstr "No se encontraron contactos"
+
+#: includes/post-types/class-contact-log-cpt.php:56
+msgid "No contacts found in Trash"
+msgstr "No se encontraron contactos en la Papelera"
+
+#: includes/post-types/class-contact-log-cpt.php:58
+msgid "Insert into contact description"
+msgstr "Insertar en la descripción del contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:59
+msgid "Uploaded to this contact"
+msgstr "Subido a este contacto"
+
+#: includes/post-types/class-contact-log-cpt.php:64
+msgid "This is where you can add new contacts."
+msgstr "Aquí es donde puedes agregar nuevos contactos."
+
+#: includes/post-types/class-promotion-cpt.php:47
+#: includes/post-types/class-promotion-cpt.php:57
+msgid "Promotions"
+msgstr "Promociones"
+
+#: includes/post-types/class-promotion-cpt.php:48
+msgid "Promotion"
+msgstr "Promoción"
+
+#: includes/post-types/class-promotion-cpt.php:49
+msgctxt "Add New Season"
+msgid "Add New"
+msgstr "Añadir nueva"
+
+#: includes/post-types/class-promotion-cpt.php:50
+msgid "Add New Promotion"
+msgstr "Añadir nueva promoción"
+
+#: includes/post-types/class-promotion-cpt.php:51
+msgid "Edit Promotion"
+msgstr "Editar promoción"
+
+#: includes/post-types/class-promotion-cpt.php:52
+msgid "New Promotion"
+msgstr "Nueva promoción"
+
+#: includes/post-types/class-promotion-cpt.php:53
+msgid "View Promotion"
+msgstr "Ver promoción"
+
+#: includes/post-types/class-promotion-cpt.php:54
+msgid "Search Promotion"
+msgstr "Buscar promoción"
+
+#: includes/post-types/class-promotion-cpt.php:55
+msgid "No promotions found"
+msgstr "No se encontraron promociones"
+
+#: includes/post-types/class-promotion-cpt.php:56
+msgid "No promotions found in Trash"
+msgstr "No se encontraron promociones en la basura"
+
+#: includes/post-types/class-promotion-cpt.php:58
+msgid "Insert into promotion description"
+msgstr "Insertar en la descripción de la promoción"
+
+#: includes/post-types/class-promotion-cpt.php:59
+msgid "Uploaded to this promotion"
+msgstr "Subido a esta promoción"
+
+#: includes/post-types/class-promotion-cpt.php:64
+msgid "This is where you can add new promotions."
+msgstr "Aquí es donde puedes agregar nuevas promociones."
+
+#: includes/shortcodes/class-promotions-csc.php:53
+msgid "Our current promotions"
+msgstr "Nuestras promociones actuales"
+
+#: includes/shortcodes/class-promotions-csc.php:143
+#: includes/shortcodes/class-promotions-csc.php:144
+msgid "nights"
+msgstr "noches"
+
+#: includes/shortcodes/class-promotions-csc.php:152
+msgid "More about this accommodation"
+msgstr "Más acerca de este alojamiento"
+
+#: includes/shortcodes/class-promotions-csc.php:166
+msgid "No active promotions were found with available dates."
+msgstr ""
+"No se encontraron promociones activas con fechas disponibles."

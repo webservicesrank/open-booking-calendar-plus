@@ -1,0 +1,13 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.obcal-promotions-csc h2:before {
+    display: none;
+}
+
+.obcal-promotions-csc .obcal-promotions form {
+    display: inline-block;
+    margin: 10px 30px 10px 0;    
+}
