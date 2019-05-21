@@ -1,5 +1,7 @@
 <?php
 
+namespace OBCal;
+
 class ContactLog_CMB
 {
 
@@ -64,7 +66,7 @@ class ContactLog_CMB
 	public function details_html($post)
 	{
 		$email = get_post_meta($post->ID, "_{$this->post_type}_email", true);
-		$last_query_date = new DateTime(get_post_meta($post->ID, "_{$this->post_type}_last_query_date", true));
+		$last_query_date = new \DateTime(get_post_meta($post->ID, "_{$this->post_type}_last_query_date", true));
 		$num_queries = count(get_post_meta( $post->ID , "_{$this->post_type}_query" , false ));
 
 		// Get the options
@@ -166,7 +168,7 @@ class ContactLog_CMB
 
 		if (array_key_exists("query_date", $query)) {
 
-			$query_date = new DateTime($query['query_date']);
+			$query_date = new \DateTime($query['query_date']);
 			$o .= '<tr><th scope="row">';
 			$o .= esc_html__('Query date', 'open-booking-calendar-plus');
 			$o .= '</th><td>';
@@ -245,7 +247,7 @@ class ContactLog_CMB
 
 		if (array_key_exists("query_date", $query)) {
 
-			$query_date = new DateTime($query['query_date']);
+			$query_date = new \DateTime($query['query_date']);
 			$o .= '<tr><th scope="row">';
 			$o .= esc_html__('Query date', 'open-booking-calendar-plus');
 			$o .= '</th><td>';
@@ -388,7 +390,7 @@ class ContactLog_CMB
 				// Get date format
 				$options_date_format = isset($options['obcal_field_date_format']) ? $options['obcal_field_date_format'] : 'Y-m-d';
 				//
-				$last_query_date = new DateTime(get_post_meta( $post_id , "_{$this->post_type}_last_query_date" , true ));
+				$last_query_date = new \DateTime(get_post_meta( $post_id , "_{$this->post_type}_last_query_date" , true ));
 				echo esc_html($last_query_date->format($options_date_format . ' H:i:s'));
 				break;
 			case 'num_queries':

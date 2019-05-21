@@ -43,7 +43,7 @@ define( 'OPEN_BOOKING_CALENDAR_PLUS_VERSION', '1.0.0' );
  */
 function activate_open_booking_calendar_plus() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-open-booking-calendar-plus-activator.php';
-	Open_Booking_Calendar_Plus_Activator::activate();
+	\OBCal\Open_Booking_Calendar_Plus_Activator::activate();
 }
 
 /**
@@ -52,7 +52,7 @@ function activate_open_booking_calendar_plus() {
  */
 function deactivate_open_booking_calendar_plus() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-open-booking-calendar-plus-deactivator.php';
-	Open_Booking_Calendar_Plus_Deactivator::deactivate();
+	\OBCal\Open_Booking_Calendar_Plus_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_open_booking_calendar_plus' );
@@ -75,7 +75,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-open-booking-calendar-plus
  */
 function run_open_booking_calendar_plus() {
 
-	$plugin = new Open_Booking_Calendar_Plus();
+	$plugin = new \OBCal\Open_Booking_Calendar_Plus();
 	$plugin->run();
 
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace OBCal;
+
 class Promotion_CPT 
 {
 
@@ -107,7 +109,7 @@ class Promotion_CPT
 			'post_type' => 'obcal_promotion',
 		];
 
-		$query_result = new WP_Query($args);
+		$query_result = new \WP_Query($args);
 
 		// The Loop
 		if ($query_result->have_posts()) {

@@ -1,5 +1,7 @@
 <?php
 
+namespace OBCal;
+
 /**
  * The admin-specific functionality of the plugin.
  *

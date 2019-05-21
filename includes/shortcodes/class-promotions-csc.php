@@ -1,5 +1,7 @@
 <?php
 
+namespace OBCal;
+
 /**
  * Promotion list
  */
@@ -107,9 +109,9 @@ class Promotions_CSC
 
         $seasons = get_posts(['post_type' => 'obcal_season', 'numberposts' => -1]);
         foreach ($seasons as $season) {
-            $season_end_date = new DateTime(get_post_meta($season->ID, "_obcal_season_end_date", true));
+            $season_end_date = new \DateTime(get_post_meta($season->ID, "_obcal_season_end_date", true));
 
-            $now_date = new DateTime(date_i18n($options_date_format));
+            $now_date = new \DateTime(date_i18n($options_date_format));
 
             if ($season->post_status == "publish" && $season_end_date >= $now_date) {
                 // Register season ID

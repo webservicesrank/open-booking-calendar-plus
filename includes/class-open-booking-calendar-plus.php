@@ -1,5 +1,7 @@
 <?php
 
+namespace OBCal;
+
 /**
  * The file that defines the core plugin class
  *
@@ -142,7 +144,7 @@ class Open_Booking_Calendar_Plus {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-open-booking-calendar-plus-public.php';
 
-		$this->loader = new Open_Booking_Calendar_Plus_Loader();
+		$this->loader = new \OBCal\Open_Booking_Calendar_Plus_Loader();
 
 	}
 
@@ -157,7 +159,7 @@ class Open_Booking_Calendar_Plus {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Open_Booking_Calendar_Plus_i18n();
+		$plugin_i18n = new \OBCal\Open_Booking_Calendar_Plus_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -174,14 +176,14 @@ class Open_Booking_Calendar_Plus {
 		/**
 		 * Add 'Promotion custom post type' actions an filters.
 		 */
-		$promotion_cpt = new Promotion_CPT( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$promotion_cpt = new \OBCal\Promotion_CPT( $this->get_open_booking_calendar_plus(), $this->get_version() );
 		$this->loader->add_action( 'init', $promotion_cpt, 'register', 11);
 		$this->loader->add_filter( 'obcal_promotion_get_promotion_id', $promotion_cpt, 'get_promotion_id', 10, 3);
 
 		/**
 		 * Add 'Contact custom post type' actions an filters.
 		 */
-		$contact_log_cpt = new ContactLog_CPT( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$contact_log_cpt = new \OBCal\ContactLog_CPT( $this->get_open_booking_calendar_plus(), $this->get_version() );
 		$this->loader->add_action( 'init', $contact_log_cpt, 'register', 11);
 		$this->loader->add_filter( 'obcal_contact_log_insert_contact', $contact_log_cpt, 'insert_contact', 10, 2);
 		$this->loader->add_action( 'obcal_contact_log_insert_query_log', $contact_log_cpt, 'insert_query_log', 10, 3);
@@ -199,7 +201,7 @@ class Open_Booking_Calendar_Plus {
 		/**
 		 * Add 'Promotion custom meta boxes' actions an filters.
 		 */
-		$promotion_cmb = new Promotion_CMB( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$promotion_cmb = new \OBCal\Promotion_CMB( $this->get_open_booking_calendar_plus(), $this->get_version() );
 		$this->loader->add_action( 'add_meta_boxes', $promotion_cmb, 'register');
 		$this->loader->add_action( 'save_post_obcal_promotion', $promotion_cmb, 'save');
 		$this->loader->add_filter( 'manage_obcal_promotion_posts_columns', $promotion_cmb, 'add_table_custom_columns');
@@ -209,7 +211,7 @@ class Open_Booking_Calendar_Plus {
 		/**
 		 * Add 'Contact Log custom meta boxes' actions an filters.
 		 */
-		$contact_log_cmb = new ContactLog_CMB( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$contact_log_cmb = new \OBCal\ContactLog_CMB( $this->get_open_booking_calendar_plus(), $this->get_version() );
 		$this->loader->add_action( 'add_meta_boxes', $contact_log_cmb, 'register');
 		$this->loader->add_action( 'save_post_obcal_contact_log', $contact_log_cmb, 'save');
 		$this->loader->add_filter( 'manage_obcal_contact_log_posts_columns', $contact_log_cmb, 'add_table_custom_columns');
@@ -229,7 +231,7 @@ class Open_Booking_Calendar_Plus {
 		/**
 		 * Add 'Promotion list custom shortcode' actions an filters.
 		 */
-		$promotions_csc = new Promotions_CSC( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$promotions_csc = new \OBCal\Promotions_CSC( $this->get_open_booking_calendar_plus(), $this->get_version() );
 		$this->loader->add_action( 'init', $promotions_csc, 'register');
 
 	}
@@ -243,7 +245,7 @@ class Open_Booking_Calendar_Plus {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Open_Booking_Calendar_Plus_Admin( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$plugin_admin = new \OBCal\Open_Booking_Calendar_Plus_Admin( $this->get_open_booking_calendar_plus(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles', 11 ); // 11 for load after non Plus plugin
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 11 ); // 11 for load after non Plus plugin
@@ -259,7 +261,7 @@ class Open_Booking_Calendar_Plus {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Open_Booking_Calendar_Plus_Public( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$plugin_public = new \OBCal\Open_Booking_Calendar_Plus_Public( $this->get_open_booking_calendar_plus(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 11 ); // 11 for load after non Plus plugin
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 11 ); // 11 for load after non Plus plugin

@@ -1,5 +1,7 @@
 <?php
 
+namespace OBCal;
+
 class ContactLog_CPT
 {
 
@@ -96,7 +98,7 @@ class ContactLog_CPT
 				'post_type' => 'obcal_contact_log'
 			];
 
-			$query_result = new WP_Query($query_args);
+			$query_result = new \WP_Query($query_args);
 
 			if (!$query_result->have_posts()) {
 
