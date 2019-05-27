@@ -101,6 +101,9 @@ class Promotions_CSC
         // Get date format
         $options_date_format = isset($options['obcal_field_date_format']) ? $options['obcal_field_date_format'] : 'Y-m-d';
 
+        // Get if show de currency code
+        $show_currency_code = isset($options['obcal_field_show_currency_code']) ? $options['obcal_field_show_currency_code'] : '1';
+
         /**
          * Find IDs of active seasons
          */
@@ -137,6 +140,10 @@ class Promotions_CSC
                 $promotion_num_nights = get_post_meta($promotion->ID, "_obcal_promotion_num_nights", true);
                 $promotion_total_price = get_post_meta($promotion->ID, "_obcal_promotion_total_price", true);
 
+                // Get the currency code and currency symbol
+                $promotion_currency_code = rest_sanitize_boolean($show_currency_code) ? strtoupper(get_post_meta($promotion->ID, "_obcal_promotion_currency_code", true)) : '';
+                $promotion_currency_symbol = get_post_meta($promotion->ID, "_obcal_promotion_currency_symbol", true);
+
                 $promotion_accommodation_page_id = get_post_meta($promotion_accommodation_id, "_obcal_accommodation_info_page_id", true);
                 $promotion_booking_preview_page_id = get_post_meta($promotion_accommodation->ID, "_obcal_accommodation_booking_preview_page_id", true);
            
@@ -144,7 +151,7 @@ class Promotions_CSC
                 $o_promotions .= "<h3>" . esc_html($promotion->post_title) . "</h3>";
                 $o_promotions .= '<div class="promotion-num-nights">' . esc_html( __('Accommodation', 'open-booking-calendar-plus') . ': ' . $promotion_accommodation->post_title . ' ' . __('nights', 'open-booking-calendar-plus') ) . '</div>';
                 $o_promotions .= '<div class="promotion-num-nights">' . esc_html( __('Number of nights', 'open-booking-calendar-plus') . ': ' . $promotion_num_nights . ' ' . __('nights', 'open-booking-calendar-plus') ) . '</div>';
-                $o_promotions .= '<div class="promotion-price">' . esc_html( __('Price', 'open-booking-calendar-plus') . ': $' . $promotion_total_price ) . '</div>';
+                $o_promotions .= '<div class="promotion-price">' . esc_html( __('Price', 'open-booking-calendar-plus') . ': ' . $promotion_currency_code . ' ' . $promotion_currency_symbol . ' ' . $promotion_total_price ) . '</div>';
 
                 //$o_promotions .= '<form method="POST" action="' . esc_url(get_permalink($promotion_booking_preview_page_id)) . '">';
                 //$o_promotions .= '<input type="hidden" name="accommodation_id" value="' . esc_attr($promotion_accommodation_id) . '">';

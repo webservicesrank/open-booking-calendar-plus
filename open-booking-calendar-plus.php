@@ -17,7 +17,7 @@
  * Plugin URI:        https://webservicesrank.com/wp-plugins/open-booking-calendar-plus/
  * Description:       Manage your hotel booking services (Free Plus features).
  * Version:           1.0.0
- * Author:            WebServicesRank.com, Fabián Karaben
+ * Author:            Web Services Rank
  * Author URI:        https://webservicesrank.com/
  * License:           GPLv3
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html

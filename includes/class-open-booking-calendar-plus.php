@@ -201,7 +201,7 @@ class Open_Booking_Calendar_Plus {
 		/**
 		 * Add 'Promotion custom meta boxes' actions an filters.
 		 */
-		$promotion_cmb = new \OBCal\Promotion_CMB( $this->get_open_booking_calendar_plus(), $this->get_version() );
+		$promotion_cmb = new \OBCal\Promotion_CMB( $this->get_open_booking_calendar_plus(), $this->get_version(), $this );
 		$this->loader->add_action( 'add_meta_boxes', $promotion_cmb, 'register');
 		$this->loader->add_action( 'save_post_obcal_promotion', $promotion_cmb, 'save');
 		$this->loader->add_filter( 'manage_obcal_promotion_posts_columns', $promotion_cmb, 'add_table_custom_columns');
@@ -306,6 +306,26 @@ class Open_Booking_Calendar_Plus {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	/**
+	 * Retrieve the array of the currency codes and symbols of the plugin.
+	 *
+	 * @since     1.0.0
+	 * @return    array    The the array of the currency codes and symbols of the plugin.
+	 */
+	public function get_currencies() {
+
+		return [
+            'usd' => ['symbol' => '$', 'title' => __('US Dollar', 'open-booking-calendar')],
+            'cad' => ['symbol' => '$', 'title' => __('Canadian Dollar', 'open-booking-calendar')],
+            'eur' => ['symbol' => '€', 'title' => __('Euro', 'open-booking-calendar')],
+            'brl' => ['symbol' => 'R$', 'title' => __('Brazilian Real', 'open-booking-calendar')],
+            'aud' => ['symbol' => '$', 'title' => __('Australian Dollar', 'open-booking-calendar')],
+            'mxn' => ['symbol' => '$', 'title' => __('Mexican Peso', 'open-booking-calendar')],
+            'gbp' => ['symbol' => '£', 'title' => __('Pound Sterling', 'open-booking-calendar')],
+            'ars' => ['symbol' => '$', 'title' => __('Argentine Peso', 'open-booking-calendar')],
+		];
 	}
 
 }

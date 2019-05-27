@@ -6,37 +6,48 @@ class Promotion_CMB
 {
 
 	/**
-     * The ID of this plugin.
-     *
-     * @since    1.0.0
-     * @access   private
-     * @var      string    $open_booking_calendar    The ID of this plugin.
-     */
-    private $open_booking_calendar;
+	 * The ID of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $open_booking_calendar    The ID of this plugin.
+	 */
+	private $open_booking_calendar;
 
-    /**
-     * The version of this plugin.
-     *
-     * @since    1.0.0
-     * @access   private
-     * @var      string    $version    The current version of this plugin.
-     */
-    private $version;
+	/**
+	 * The version of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $version    The current version of this plugin.
+	 */
+	private $version;
+
+	/**
+	 * The plugin core class intance
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      object    $plugin_core    The plugin core class intance.
+	 */
+	protected $plugin_core;
 
 	protected $post_type = 'obcal_promotion';
 
 	/**
-     * Initialize the class and set its properties.
-     *
-     * @since    1.0.0
-     * @param      string    $open_booking_calendar       The name of the plugin.
-     * @param      string    $version    The version of this plugin.
-     */
-    public function __construct($open_booking_calendar, $version)
-    {
+	 * Initialize the class and set its properties.
+	 *
+	 * @since    1.0.0
+	 * @param      string    $open_booking_calendar       The name of the plugin.
+	 * @param      string    $version    The version of this plugin.
+	 */
+	public function __construct($open_booking_calendar, $version, $plugin_core)
+	{
 
-        $this->open_booking_calendar = $open_booking_calendar;
-        $this->version = $version;
+		$this->open_booking_calendar = $open_booking_calendar;
+		$this->version = $version;
+		$this->plugin_core = $plugin_core;
+		
 	}
 	
 	/**
@@ -62,6 +73,9 @@ class Promotion_CMB
 		$season_id = get_post_meta($post->ID, "_{$this->post_type}_season_id", true);
 		$num_nights = get_post_meta($post->ID, "_{$this->post_type}_num_nights", true);
 		$total_price = get_post_meta($post->ID, "_{$this->post_type}_total_price", true);
+
+		$currency_code = get_post_meta($post->ID, "_{$this->post_type}_currency_code", true);
+		$currency_symbol = get_post_meta($post->ID, "_{$this->post_type}_currency_symbol", true);
 
 		$accommodations = get_posts(['post_type' => 'obcal_accommodation', 'numberposts' => -1]);
 		 
@@ -118,7 +132,9 @@ class Promotion_CMB
 					<label for="<?= esc_attr($this->post_type . '_total_price') ?>"><?php esc_html_e('Promotion price', 'open-booking-calendar-plus'); ?></label>
 				</th>
 				<td>
-					$<input type="number" name="<?= esc_attr($this->post_type . '_total_price') ?>" id="<?= esc_attr($this->post_type . '_total_price') ?>" value="<?= esc_attr($total_price) ?>">
+					<?= $currency_symbol ?> 
+					<input type="number" name="<?= esc_attr($this->post_type . '_total_price') ?>" id="<?= esc_attr($this->post_type . '_total_price') ?>" value="<?= esc_attr($total_price) ?>"> 
+					<?= strtoupper( $currency_code ) ?>
 				</td>
 			</tr>		
 		</table>			
@@ -133,6 +149,15 @@ class Promotion_CMB
 
 		// Keys of the values to save directly
 		$keys_to_save_directly = ['accommodation_id', 'season_id', 'num_nights', 'total_price'];
+
+		// Get currencies
+		$currencies = $this->plugin_core->get_currencies();
+
+		// Get the options
+		$options = get_option('obcal_options');
+
+		// Get the general currency
+		$system_currency_code = isset($options['obcal_field_system_currency_code']) ? strtolower($options['obcal_field_system_currency_code']) : 'usd';
 
 		/** 
 		 * Sanitize POST values
@@ -186,6 +211,22 @@ class Promotion_CMB
 			}
 		}
 
+		/**
+		 * Save the currency
+		 */
+
+		update_post_meta(
+			$post_id,
+			"_{$this->post_type}_currency_code",
+			$system_currency_code
+		);
+
+		update_post_meta(
+			$post_id,
+			"_{$this->post_type}_currency_symbol",
+			array_key_exists( $system_currency_code, $currencies ) ? $currencies[$system_currency_code]['symbol'] : '$'
+		);
+
 	}
 
 	/**
@@ -223,7 +264,9 @@ class Promotion_CMB
 			echo esc_html(get_post_meta( $post_id , "_{$this->post_type}_num_nights" , true ));
 			break;
 		case 'total_price':
-			echo "$" . esc_html(get_post_meta( $post_id , "_{$this->post_type}_total_price" , true ));
+			$currency_code = strtoupper(get_post_meta($post_id, "_{$this->post_type}_currency_code", true));
+			$currency_symbol = get_post_meta($post_id, "_{$this->post_type}_currency_symbol", true);
+			echo $currency_code . ' ' . $currency_symbol . ' ' . esc_html(get_post_meta( $post_id , "_{$this->post_type}_total_price" , true ));
 			break;
 		}
 	}
