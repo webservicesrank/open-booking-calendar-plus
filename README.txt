@@ -16,7 +16,7 @@ With Open Booking Calendar you can manage your hotel booking services, easy and 
 
 https://www.youtube.com/watch?v=bK3UJH-T6wk
 
-== How can it be 100% free? ==
+= How can it be 100% free? =
 
 This plugin is free thanks to affiliate programs. If you need web hosting please use the following link and help us keep growing:
 
@@ -24,7 +24,7 @@ This plugin is free thanks to affiliate programs. If you need web hosting please
 
 Thanks for your help!
 
-== Introduction ==
+= Introduction =
 
 To make a reservation a visitor or client must enter the page of a accommodation, choose the dates of check-in and check-out, complete the form and press the "Preview booking" button.
 
@@ -34,7 +34,7 @@ At that moment a new reservation is generated in the "Pending" status and two em
 
 When the reservation manager changes the status of the reservation from "Pending" to "Confirmed" or to "Canceled" a notification email will also be sent to the client.
 
-== Optional step ==
+= Optional step =
 
 Optionally you can install **Open Booking Calendar Plus**, our **free plugin** that adds interesting features to this plugin
 
@@ -42,14 +42,14 @@ You can **download** Open Booking Calendar Plus 100% free from [Download](https:
 
 **Notice:** it is necessary to provide a valid email to download Open Booking Calendar Plus, this way we will send you notifications when a new version of the plugin Plus is available.
 
-== Steps to follow for a quick start  ==
+= Steps to follow for a quick start  =
 
 - Add the general pages
 - Add the seasons
 - Add the accommodations
 - Add the promotions (Free Plus feature)
 
-== Other interesting features ==
+= Other interesting features =
 
 - 'Contact Log' (Free Plus feature): Each time a visitor preview a reservation or perform a search for accommodation, a record is kept for future inquiries.
 
