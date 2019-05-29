@@ -69,7 +69,7 @@ msgstr "Fecha de la consulta"
 #: admin/meta-boxes/class-promotion-cmb.php:157
 #: includes/shortcodes/class-promotions-csc.php:143
 msgid "Accommodation"
-msgstr "Alojamiento"
+msgstr "Alojamientooo"
 
 #: admin/meta-boxes/class-contact-log-cmb.php:194
 #: admin/meta-boxes/class-contact-log-cmb.php:262

@@ -85,7 +85,7 @@ class Promotion_CMB
 		<table class="form-table">
 			<tr>
 				<th scope="row">
-					<label for="<?= esc_attr($this->post_type . '_accommodation_id') ?>"><?php esc_html_e('Accommodation', 'open-booking-calendar-plus'); ?></label>
+					<label for="<?= esc_attr($this->post_type . '_accommodation_id') ?>">AAA <?php esc_html_e('Accommodation', 'open-booking-calendar-plus'); ?></label>
 				</th>
 				<td>
 					<select name="<?= esc_attr($this->post_type . '_accommodation_id') ?>" id="<?= esc_attr($this->post_type . '_accommodation_id') ?>" >
