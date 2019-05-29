@@ -3,7 +3,7 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Booking Calendar Plus v1.0.0\n"
+"Project-Id-Version: Open Booking Calendar Plus v1.0.2\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
 "POT-Creation-Date: 2019-05-18 10:31-0300\n"
 "PO-Revision-Date: \n"
@@ -69,7 +69,7 @@ msgstr "Fecha de la consulta"
 #: admin/meta-boxes/class-promotion-cmb.php:157
 #: includes/shortcodes/class-promotions-csc.php:143
 msgid "Accommodation"
-msgstr "Alojamientooo"
+msgstr "Alojamiento"
 
 #: admin/meta-boxes/class-contact-log-cmb.php:194
 #: admin/meta-boxes/class-contact-log-cmb.php:262
